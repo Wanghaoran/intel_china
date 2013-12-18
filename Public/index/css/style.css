@@ -1,0 +1,60 @@
+*{word-wrap:break-word;}
+body,input,button,select,textarea{font:12px/1.5 'Microsoft Yahei','Simsun';color:#444;}
+textarea{resize:none;}
+body,ul,ol,li,dl,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,.pr,.pc{margin:0;padding:0;}
+table{empty-cells:show;border-collapse:collapse;}caption,th{text-align:left;font-weight:400;}
+dl,ul li,.xl li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:1em;}
+em,cite,i{font-style:normal;}
+a{color:#333;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+table{border-collapse:collapse;border-spacing:0;}
+input{outline: none;}/* 屏蔽文本框高亮 */
+textarea {outline: none;} 
+/* 清理浮动 */
+.clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clear {zoom:1; /* for IE6 IE7 */}
+.clear5{ clear:both; height:5px;}
+.clear10{ clear:both; height:10px;}
+.clear20{ clear:both; height:20px;}
+/*去掉超链接虚线框*/
+a{outline:none;}
+a:active{noOutline:expression(this.onFocus=this.blur());}
+:focus{outline:0;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+
+.contain{ width:940px; margin:0 auto;}
+.header{ width:940px; height:684px; background:url(../images/topbg.jpg) no-repeat;}
+.menu{ width:940px; height:63px; background:url(../images/menubg.jpg) top no-repeat;}
+.menu ul{ padding-left:440px;}
+.menu ul li{ float:left; width:220px; margin-right:40px;}
+.menu ul li.two{ margin-right:0}
+.menu ul li a{ width:220px; height:63px; display:inline-block;}
+.menu ul li.one a:hover{ background:url(../images/menubg.jpg) -440px -62px no-repeat;}
+.menu ul li.two a:hover{ background:url(../images/menubg.jpg) -700px -62px no-repeat;}
+.con{ width:940px; height:761px; background:url(../images/conbg.jpg) no-repeat; position:relative;}
+a.btn_detail{ width:108px; height:42px; background:url(../images/btn_detail.jpg) top no-repeat; display:inline-block;}
+a.btn_detail:hover{background:url(../images/btn_detail.jpg) bottom no-repeat;}
+.nav{ padding-top:670px;}
+.nav li{ float:left; width:313px; text-align:center;}
+.popdiv { background:#fff; text-align: center; width:900px; height:621px; z-index:99; position:absolute; top:120px; left:20px;} 
+a.icon_close{ float:right; margin:15px 15px 0 0; width:36px; height:36px; background:url(../images/icon_close.jpg) no-repeat;}
+a.btn_wyxz{ width:431px; height:47px; display:block; margin:40px auto 0; background:url(../images/btn_wyxz.jpg) no-repeat}
+
+.friend{ width:880px; padding:0 30px; margin-top:20px;}
+.ftitle{ width:880px; height:35px; background:url(../images/titlebg.jpg) left center no-repeat; border-bottom:#c8c8c8 2px solid;}
+.fcon{ width:880px; margin-top:20px;}
+.fcon ul li{ float:left; width:160px; height:250px; padding-right:16px; text-align:left;}
+.fcon ul li dl{}
+.fcon ul li dl dt a img{ width:63px; height:63px; border:0; margin:5px 0;}
+.fcon ul li dl dd.d1{ color:#000; font-size:16px; font-weight:800; height:30px; line-height:30px;}
+.fcon ul li dl dd.d1 a{color:#000; text-decoration:none;}
+.fcon ul li dl dd.d2{ color:#797979; font-size:16px; font-weight:800; height:30px; line-height:30px;}
+.fcon ul li dl dd.d3{ color:#e8426d; font-size:30px; font-weight:800; height:40px; line-height:40px;}
+.fcon ul li dl dd.d4{ height:45px;}
+.fcon ul li dl dd.d4 a{ width:51px; height:44px; display:inline-block;}
+.fcon ul li dl dd.d4 a.icon_z{ background:url(../images/icon_z.jpg) no-repeat; margin-right:10px;}
+.fcon ul li dl dd.d4 a.icon_c{ background:url(../images/icon_c.jpg) no-repeat}
