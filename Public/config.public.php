@@ -18,6 +18,10 @@ return array(
     'DB_PORT' => '3306',  //端口
     'DB_PREFIX' => 'intel_',  //数据库表前缀
 
+    'WB_AKEY' => '1077506463',
+    'WB_SKEY' => '9abc7f6e37a4811d37c1871f91ba7d4e',
+    'WB_CALLBACK_URL' => 'http://www.cnhtk.cn/intel_china/index/shows',
+
     'UPLOAD_PATH' => './Upload', //文件上传地址
     'TMPL_PARSE_STRING'  =>array(
         '__UPLOAD__' => __ROOT__ . '/Upload',

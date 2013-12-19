@@ -1,11 +1,36 @@
 <?php
 class IndexAction extends Action {
     public function index(){
-        redirect('https://api.weibo.com/oauth2/authorize?client_id=1077506463&response_type=code&redirect_uri=http://www.cnhtk.cn/intel_china/index/shows');
+        include_once('./saetv2.ex.class.php');
+        $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
+        $code_url = $o -> getAuthorizeURL(C('WB_CALLBACK_URL'));
+        redirect($code_url);
     }
 
     public function shows(){
-        $this -> display();
+        include_once('./saetv2.ex.class.php');
+        $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
+        if (isset($_REQUEST['code'])) {
+            $keys = array();
+            $keys['code'] = $_REQUEST['code'];
+            $keys['redirect_uri'] = C('WB_CALLBACK_URL');
+            try {
+                $token = $o->getAccessToken( 'code', $keys ) ;
+            } catch (OAuthException $e) {
+
+            }
+        }
+        if ($token) {
+            $_SESSION['token'] = $token;
+            setcookie('weibojs_'.$o -> client_id, http_build_query($token));
+            redirect(PHP_FILE . '/index/info' );
+        }else{
+            die('授权失败');
+        }
+    }
+
+    public function info(){
+        echo 'Hello!';
     }
 
     public function info(){
