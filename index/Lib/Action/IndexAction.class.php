@@ -30,14 +30,13 @@ class IndexAction extends Action {
     }
 
     public function info(){
-        echo 'Hello!';
-    }
-
-    public function info(){
+        /*
         if(!empty($_GET['id'])){
             $info = R('Type/getType', array($_GET['id']), 'Widget');
             dump($info);
         }
+        */
+        echo 'Hello!';
     }
 
 }
