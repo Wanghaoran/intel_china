@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:wb=“http://open.weibo.com/wb”>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Intel 友情大考验</title>
+<title>Intel 友情大考验之新年心意</title>
 <link href="__PUBLIC__/index/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/appClient.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/client.js" type="text/javascript"></script>
-    <script type="text/javascript" src="__PUBLIC__/index/javascript/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/index/javascript/jquery.js"></script>
 <script type="text/javascript">
 //显示灰色 jQuery 遮罩层
 function showBg(index) {
@@ -36,23 +38,17 @@ function closeBg(index) {
 }
 </script>
 </head>
-<body onload="authLoad();">
+<body>
 <div class="contain">
 	<div class="header"></div>
-    <div class="menu">
-    	<ul>
-        	<li class="one"><a href="#"></a></li>
-            <li class="two"><a href="#"></a></li>
-        </ul>
-        <div class="clear"></div>
-    </div>
+    <div class="menu"></div>
     <div class="con">
     	<!--遮罩层  start-->
         <div id="popDiv1" class="popdiv" style="display:none;"> 	
             <a href="javascript:closeBg(1)" class="icon_close"></a>  
-            <div class="divimg">
+            <div class="divimg"> 
             <img src="__PUBLIC__/index/images/popdiv1.jpg"/>
-            </div>
+            </div> 
             <a href="__URL__/result/id/1" class="btn_wyxz"></a>
         </div> 
         <div id="popDiv2" class="popdiv" style="display:none;"> 	
@@ -60,14 +56,14 @@ function closeBg(index) {
             <div class="divimg"> 
             <img src="__PUBLIC__/index/images/popdiv2.jpg"/>
             </div> 
-            <a href="__URL__/result/id/2" class="btn_wyxz"></a>
+            <a href="__URL__/result/id/1" class="btn_wyxz"></a>
         </div> 
         <div id="popDiv3" class="popdiv" style="display:none;"> 	
             <a href="javascript:closeBg(3)" class="icon_close"></a>  
             <div class="divimg"> 
             <img src="__PUBLIC__/index/images/popdiv3.jpg"/>
             </div> 
-            <a href="__URL__/result/id/3" class="btn_wyxz"></a>
+            <a href="__URL__/result/id/1" class="btn_wyxz"></a>
         </div> 
     	<ul class="nav">
         	<li><a href="javascript:void(0)" onClick="showBg(1);return false;" class="btn_detail"></a></li>
@@ -76,58 +72,9 @@ function closeBg(index) {
         </ul>
         <div class="clear"></div>
     </div>
-    <div class="friend">
-    	<div class="ftitle"></div>
-        <div class="fcon">
-        	<ul>
-            	<li>
-                	<dl>
-                    	<dt><a href="#"><img src="__UPLOAD__/touxiang1.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="__UPLOAD__/touxiang2.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="__UPLOAD__/touxiang3.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="__UPLOAD__/touxiang4.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="__UPLOAD__/touxiang5.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <div class="clear"></div>
-            </ul>
-        </div>
+    <div class="jiangpin"></div>
+    <div class="sina">
+        <wb:topic column="n" border="n" width="940" height="925" tags="%E5%8F%8B%E6%83%85%E5%A4%A7%E6%8C%91%E6%88%98" language="zh_cn" version="base" appkey="1JvuLZ" footbar="y" filter="n" refer="n" ></wb:topic>
     </div>
 </div>
 </body>
