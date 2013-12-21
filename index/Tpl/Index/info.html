@@ -37,7 +37,17 @@ function closeBg(index) {
 	
 }
 </script>
-
+    <script>
+        WB2.anyWhere(function(W){
+            W.widget.publish({
+                'id' : 'wb_publish1',
+                'default_text' : '测试啊',
+                'callback' : function(o) {
+                    //do something...
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="contain">
@@ -78,16 +88,6 @@ function closeBg(index) {
         <wb:topic column="n" border="n" width="940" height="925" tags="%E5%8F%8B%E6%83%85%E5%A4%A7%E6%8C%91%E6%88%98" language="zh_cn" version="base" appkey="1JvuLZ" footbar="y" filter="n" refer="n" ></wb:topic>
     </div>
 </div>
-<script>
-    WB2.anyWhere(function(W){
-        W.widget.publish({
-            'id' : 'wb_publish1',
-            'default_text' : '测试啊',
-            'callback' : function(o) {
-                //do something...
-            }
-        });
-    });
-</script>
+
 </body>
 </html>
