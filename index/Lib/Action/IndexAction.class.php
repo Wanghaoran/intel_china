@@ -30,9 +30,11 @@ class IndexAction extends Action {
     }
 
     public function info(){
+        $User = M('User');
+        if($User -> find($_GET['viewer'])){
+            redirect(PHP_FILE . '/index/result');
+        }
         $this -> display();
-
-
     }
 
     public function result(){
