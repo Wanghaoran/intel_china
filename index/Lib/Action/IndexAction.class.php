@@ -140,7 +140,11 @@ class IndexAction extends Action {
 
         $this -> display();
 
+    }
 
+    //更多好友页
+    public function morefriends(){
+        $this -> display();
     }
 
 }
