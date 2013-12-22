@@ -36,7 +36,7 @@ class IndexAction extends Action {
     public function info(){
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
-        $uid_get = $c - >get_uid();
+        $uid_get = $c -> get_uid();
         $uid = $uid_get['uid'];
         $User = M('User');
         if($a = $User -> find($uid)){
