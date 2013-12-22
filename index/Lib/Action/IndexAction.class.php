@@ -149,6 +149,10 @@ class IndexAction extends Action {
         $uid_get = $c->get_uid();
         $uid = $uid_get['uid'];
 
+        //用户信息
+        $user_info = $c -> show_user_by_id($uid);
+        $this -> assign('user_info', $user_info);
+
         //All Friends
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
         $User = M('User');
@@ -171,7 +175,8 @@ class IndexAction extends Action {
             usleep(200000);
         }
 
-        dump($result);
+        $this -> assign('result', $result);
+
         $this -> display();
     }
 
