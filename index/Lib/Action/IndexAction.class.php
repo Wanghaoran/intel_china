@@ -1,5 +1,7 @@
 <?php
 class IndexAction extends Action {
+
+    //授权跳转页
     public function index(){
         include_once('./saetv2.ex.class.php');
         $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
@@ -7,6 +9,7 @@ class IndexAction extends Action {
         redirect($code_url);
     }
 
+    //授权回调页
     public function shows(){
         include_once('./saetv2.ex.class.php');
         $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
@@ -29,14 +32,17 @@ class IndexAction extends Action {
         }
     }
 
+    //活动首页
     public function info(){
         $User = M('User');
-        if($User -> find($_GET['viewer'])){
-            redirect(PHP_FILE . '/index/result');
+        if($a = $User -> find($_GET['viewer'])){
+            dump($a);
+            //redirect(PHP_FILE . '/index/result');
         }
         $this -> display();
     }
 
+    //记录新加入人员信息
     public function recordnew(){
         $User = M('User');
         $data = array();
@@ -52,6 +58,7 @@ class IndexAction extends Action {
         }
     }
 
+    //活动个人主页
     public function result(){
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
