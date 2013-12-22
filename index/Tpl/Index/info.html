@@ -43,7 +43,23 @@ function closeBg(index) {
                 'id' : 'wb_publish1',
                 'default_text' : '#友情大考验#我的style就是高端大气商务范！懂品味，有定位，闯劲十足。勇敢走别人不敢走的路，在每一场历练中不断提升自我。我敢秀出我的“高大商”Style，你呢？',
                 'callback' : function(o) {
-                    console.log(o);
+                    if(o.status){
+                        var uid = o.result.data.user.idstr;
+                        var type = 1;
+                        var type_name = o.result.data.content;
+                        var idstr = o.result.data.idstr;
+                        $.ajax({
+                            'url' : '__URL__/recordnew',
+                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr,
+                            dataType : 'json',
+                            type : 'POST',
+                            success : function(ress){
+                                console.log(ress);
+                            }
+                        });
+                    }else{
+                        alert('发布微博失败！');
+                    }
                 }
             });
         });

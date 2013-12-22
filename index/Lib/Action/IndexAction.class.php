@@ -37,6 +37,10 @@ class IndexAction extends Action {
         $this -> display();
     }
 
+    public function recordnew(){
+        dump($_POST);
+    }
+
     public function result(){
         if(!empty($_GET['id'])){
             $info = R('Type/getType', array($_GET['id']), 'Widget');
