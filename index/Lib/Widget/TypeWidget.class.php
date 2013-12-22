@@ -25,6 +25,15 @@ class TypeWidget extends Action {
         //获取好友列表
         $result = $c -> bilateral_ids($uid);
 
+        //计算分页
+        $page = ceil($result['total_number'] / 3);
+
+        if($page > 1 ){
+            for($i = 2; $i <= $page; $i++){
+                dump($i);
+            }
+        }
+
         dump($result);
     }
 }
