@@ -80,7 +80,10 @@ class IndexAction extends Action {
         //好友
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
 
-        if($page = ceil($friends_list['total_number'] / 3) > 1 ){
+        //计算分页
+        $page = ceil($friends_list['total_number'] / 3);
+
+        if($page > 1 ){
             for($i = 2; $i <= $page; $i++){
                 echo $i . '<br/>';
             }
