@@ -17,4 +17,14 @@ class TypeWidget extends Action {
     public function getType($key){
         return $this -> type[$key];
     }
+
+    public function getfriends($uid){
+        include_once('./saetv2.ex.class.php');
+        $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
+
+        //获取好友列表
+        $result = $c -> bilateral_ids($uid);
+
+        dump($result);
+    }
 }

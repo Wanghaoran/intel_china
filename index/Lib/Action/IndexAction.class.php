@@ -76,6 +76,10 @@ class IndexAction extends Action {
         $User = M('User');
         $site_info = $User -> field('type_name,score') -> find($uid);
         $this -> assign('site_info', $site_info);
+
+        //好友
+        $friends_list = R('Type/getfriends', array($uid), 'Widget');
+
         $this -> display();
 
 
