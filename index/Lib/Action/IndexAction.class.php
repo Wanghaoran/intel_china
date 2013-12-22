@@ -134,7 +134,7 @@ class IndexAction extends Action {
         /* --------------------- 最新评论 Start ---------------------- */
 
         $commit = $c -> get_comments_by_sid($site_info['idstr'], 1, 3);
-        dump($commit);
+        $this -> assign('commit', $commit['comments']);
 
         /* --------------------- 最新评论 End ---------------------- */
 

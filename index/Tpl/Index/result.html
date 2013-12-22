@@ -38,30 +38,17 @@
             <div class="pinglun">
             	<div class="pl_title"></div>
                 <div class="pl_con">
+                    <volist name="commit" id="c">
                 	<li>
-                    	<div class="divimg"><a href="#"><img src="upfile/s_img1.jpg" /></a></div>
+                    	<div class="divimg"><a><img src="<-{$c.user.avatar_large}->" /></a></div>
                         <div class="divinfo">
                         	<div class="sanjiao"></div>
-                            <p>你要是小清新，世界上没有卸姐啦！</p>
+                            <p><-{$c.text}-></p>
                         </div>
                         <div class="clear"></div>
                     </li>
-                    <li>
-                    	<div class="divimg"><a href="#"><img src="upfile/s_img2.jpg" /></a></div>
-                        <div class="divinfo">
-                        	<div class="sanjiao"></div>
-                            <p>你要是小清新，世界上没有卸姐啦！</p>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                    	<div class="divimg"><a href="#"><img src="upfile/s_img3.jpg" /></a></div>
-                        <div class="divinfo">
-                        	<div class="sanjiao"></div>
-                            <p>你要是小清新，世界上没有卸姐啦！</p>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
+                    </volist>
+
                 </div>
             </div>
             <!--模块一 结束-->
