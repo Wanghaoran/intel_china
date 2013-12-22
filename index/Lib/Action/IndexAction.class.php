@@ -88,6 +88,22 @@ class IndexAction extends Action {
         $index_asc = array_reverse($index_asc);
         //最高三位
         $index_desc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score DESC') -> select();
+
+        //获取头像及昵称
+        foreach($index_asc as $key => $value){
+            $temp_user_info = $c -> show_user_by_id($value['uid']);
+            $index_asc[$key]['screen_name'] = $temp_user_info['screen_name'];
+            $index_asc[$key]['avatar_large'] = $temp_user_info['avatar_large'];
+            usleep(200000);
+        }
+
+        foreach($index_desc as $key => $value){
+            $temp_user_info = $c -> show_user_by_id($value['uid']);
+            $index_desc[$key]['screen_name'] = $temp_user_info['screen_name'];
+            $index_desc[$key]['avatar_large'] = $temp_user_info['avatar_large'];
+            usleep(200000);
+        }
+
         dump($index_asc);
         dump($index_desc);
 
