@@ -133,10 +133,10 @@
                 <volist name="friend_join" id="f_j">
             	<li>
                 	<dl>
-                    	<dt><a href="#"><img src="<-{f_j.avatar_large}->"/></a></dt>
-                        <dd class="d1"><a href="#"><-{f_j.type_name}-></a></dd>
+                    	<dt><a href="#"><img src="<-{$f_j.avatar_large}->"/></a></dt>
+                        <dd class="d1"><a href="#"><-{$f_j.type_name}-></a></dd>
                         <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3"><-{$i_a.score}-></dd>
+                        <dd class="d3"><-{$f_j.score}-></dd>
                         <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
                     </dl>
                 </li>
