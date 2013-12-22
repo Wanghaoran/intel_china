@@ -84,7 +84,7 @@ class IndexAction extends Action {
         /* --------------------- 友情指数排行榜 Start ---------------------- */
 
         $where_index = array();
-        $where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
+        //$where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
 
         //最低三位
         $index_asc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score ASC') -> select();
@@ -110,7 +110,26 @@ class IndexAction extends Action {
         $this -> assign('index_asc', $index_asc);
         $this -> assign('index_desc', $index_desc);
 
-        /* --------------------- 友情指数排行榜 End ---------------------- */
+
+        /* --------------------- 好友参与 Start ---------------------- */
+
+        $where_join = array();
+        $where_join['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
+
+        $friend_join = $User -> field('uid,score') -> where($where_join) -> limit(10) -> order('join_time DESC') -> select();
+
+        //获取头像及昵称
+        foreach($friend_join as $key => $value){
+            $temp_user_info = $c -> show_user_by_id($value['uid']);
+            $friend_join[$key]['screen_name'] = $temp_user_info['screen_name'];
+            $friend_join[$key]['avatar_large'] = $temp_user_info['avatar_large'];
+            usleep(200000);
+        }
+
+        dump($friend_join);
+
+
+        /* --------------------- 好友参与 End ---------------------- */
 
         $this -> display();
 
