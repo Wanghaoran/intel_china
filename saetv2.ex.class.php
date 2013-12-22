@@ -1604,7 +1604,7 @@ class SaeTClientV2
 	 * @param int $sort  排序类型，0：按关注时间最近排序，默认为0。
 	 * @return array
 	 **/
-	function bilateral_ids( $uid, $page = 1, $count = 3, $sort = 0)
+	function bilateral_ids( $uid, $page = 1, $count = 1000, $sort = 0)
 	{
 		$params = array();
 		$params['uid'] = $uid;

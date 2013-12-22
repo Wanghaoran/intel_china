@@ -18,6 +18,7 @@ class TypeWidget extends Action {
         return $this -> type[$key];
     }
 
+    //获取全部好友 Uid
     public function getfriends($uid){
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
@@ -26,7 +27,7 @@ class TypeWidget extends Action {
         $result = $c -> bilateral_ids($uid);
 
         //计算分页
-        $page = ceil($result['total_number'] / 3);
+        $page = ceil($result['total_number'] / 1000);
 
         if($page > 1 ){
             for($i = 2; $i <= $page; $i++){
@@ -37,6 +38,6 @@ class TypeWidget extends Action {
             }
         }
 
-        dump($result);
+        return $result;
     }
 }

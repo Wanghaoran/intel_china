@@ -79,8 +79,7 @@ class IndexAction extends Action {
 
         //好友
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
-
-
+        dump($friends_list);
 
         $this -> display();
 
