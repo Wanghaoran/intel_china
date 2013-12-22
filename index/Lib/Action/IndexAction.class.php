@@ -71,6 +71,11 @@ class IndexAction extends Action {
         //用户信息
         $user_info = $c -> show_user_by_id($uid);
         $this -> assign('user_info', $user_info);
+
+        //活动信息
+        $User = M('User');
+        $site_info = $User -> field('type_name,score') -> find($uid);
+        $this -> assign('$site_info', $site_info);
         $this -> display();
 
 
