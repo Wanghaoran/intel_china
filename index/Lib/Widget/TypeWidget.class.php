@@ -30,7 +30,10 @@ class TypeWidget extends Action {
 
         if($page > 1 ){
             for($i = 2; $i <= $page; $i++){
-                dump($i);
+                $tmp_result = array();
+                $tmp_result = $c -> bilateral_ids($uid, $i);
+                $result['ids'] = array_merge($result['ids'], $tmp_result['ids']);
+                unsleep(500000);
             }
         }
 
