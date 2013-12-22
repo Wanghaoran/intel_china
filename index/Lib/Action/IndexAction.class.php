@@ -77,9 +77,19 @@ class IndexAction extends Action {
         $site_info = $User -> field('type_name,score') -> find($uid);
         $this -> assign('site_info', $site_info);
 
-        //好友
+        //All Friends
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
-        dump($friends_list);
+
+        //友情指数排行榜
+        $where_index = array();
+        //$where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
+        //最低三位
+        $index_asc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score ASC') -> select();
+        $index_asc = array_reverse($index_asc);
+        //最高三位
+        $index_desc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score DESC') -> select();
+        dump($index_asc);
+        dump($index_desc);
 
         $this -> display();
 
