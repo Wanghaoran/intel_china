@@ -88,7 +88,7 @@
         <div class="discusright">
         	<div class="distoptitle"></div>
             <div class="discon">
-                <foreach name="index_desc" id="i_d">
+                <volist name="index_desc" id="i_d">
             	<li>
                 	<div class="divimg"><a href="#"><img src="<-{$i_d.avatar_large}->" /></a></div>
                     <div class="divinfo">
@@ -97,7 +97,7 @@
                     </div>
                     <div class="clear"></div>
                 </li>
-                </foreach>
+                </volist>
 
 
                 <li class="circle"></li>
@@ -111,7 +111,7 @@
                 </li>
                 <li class="circle"></li>
 
-                <foreach name="index_asc" id="i_a">
+                <volist name="index_asc" id="i_a">
                 <li>
                 	<div class="divimg"><a href="#"><img src="<-{$i_a.avatar_large}->" /></a></div>
                     <div class="divinfo">
@@ -120,7 +120,7 @@
                     </div>
                     <div class="clear"></div>
                 </li>
-                </foreach>
+                </volist>
 
             </div>
         </div>
