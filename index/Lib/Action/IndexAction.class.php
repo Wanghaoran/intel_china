@@ -34,13 +34,13 @@ class IndexAction extends Action {
 
     //活动首页
     public function info(){
-        dump($_GET);
+        include_once('./saetv2.ex.class.php');
+        $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
+        $uid_get = $c - >get_uid();
+        $uid = $uid_get['uid'];
         $User = M('User');
-        if($a = $User -> find($_GET['viewer'])){
-            dump($a);
-            dump($_GET);
-            echo $User -> getLastSql();
-            //redirect(PHP_FILE . '/index/result');
+        if($a = $User -> find($uid)){
+            redirect(PHP_FILE . '/index/result');
         }
         $this -> display();
     }
