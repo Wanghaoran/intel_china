@@ -34,6 +34,7 @@ class IndexAction extends Action {
 
     //活动首页
     public function info(){
+        dump($_GET);
         $User = M('User');
         if($a = $User -> find($_GET['viewer'])){
             dump($a);
