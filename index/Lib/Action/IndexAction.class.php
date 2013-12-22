@@ -37,6 +37,8 @@ class IndexAction extends Action {
         $User = M('User');
         if($a = $User -> find($_GET['viewer'])){
             dump($a);
+            dump($_GET['viewer']);
+            echo $User -> getLastSql();
             //redirect(PHP_FILE . '/index/result');
         }
         $this -> display();
@@ -66,7 +68,7 @@ class IndexAction extends Action {
         dump($uid_get);
         $uid = $uid_get['uid'];
         //get Friend Ids
-        $temp = $c-> bilateral_ids( $uid);
+        $temp = $c-> bilateral_ids($uid);
         dump($temp);
         $User = M('User');
         $result = $User -> find($uid);
