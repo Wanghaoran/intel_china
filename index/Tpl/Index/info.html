@@ -46,7 +46,7 @@ function closeBg(index) {
                     if(o.status){
                         var uid = o.result.data.user.idstr;
                         var type = 1;
-                        var type_name = o.result.data.content;
+                        var type_name = '高端大气商务范';
                         var idstr = o.result.data.idstr;
                         $.ajax({
                             'url' : '__URL__/recordnew',
@@ -54,7 +54,11 @@ function closeBg(index) {
                             dataType : 'json',
                             type : 'POST',
                             success : function(ress){
-                                console.log(ress);
+                                if(ress.status == 1){
+                                    location.href = '__URL__/result';
+                                }else{
+                                    alert('数据通信失败！');
+                                }
                             }
                         });
                     }else{
@@ -71,8 +75,29 @@ function closeBg(index) {
                 'id' : 'wb_publish2',
                 'default_text' : '#友情大考验#我的style就是时尚动感至青春！敢想、敢拼、做真我，相信奋斗的力量，也相信年轻人只有越努力才会越幸运，爱我的闺蜜基友们，莫羞涩，快来朝我疯狂点赞吧！PS：我敢为我的style代言，你呢？',
                 'callback' : function(o) {
-                    //do something...
+                    if(o.status){
+                        var uid = o.result.data.user.idstr;
+                        var type = 2;
+                        var type_name = '时尚动感志青春';
+                        var idstr = o.result.data.idstr;
+                        $.ajax({
+                            'url' : '__URL__/recordnew',
+                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr,
+                            dataType : 'json',
+                            type : 'POST',
+                            success : function(ress){
+                                if(ress.status == 1){
+                                    location.href = '__URL__/result';
+                                }else{
+                                    alert('数据通信失败！');
+                                }
+                            }
+                        });
+                    }else{
+                        alert('发布微博失败！');
+                    }
                 }
+
             });
         });
     </script>
@@ -83,8 +108,29 @@ function closeBg(index) {
                 'id' : 'wb_publish3',
                 'default_text' : '#友情大考验#我的style是家庭娱乐亲分享！家人的鼓励是我成长的助动力，爱是他们送给我的最赞礼物。时刻分享简单而深刻的小幸福，让爱你的人不担心，同意的请为我点赞吧~',
                 'callback' : function(o) {
-                    //do something...
+                    if(o.status){
+                        var uid = o.result.data.user.idstr;
+                        var type = 3;
+                        var type_name = '家庭娱乐亲分享';
+                        var idstr = o.result.data.idstr;
+                        $.ajax({
+                            'url' : '__URL__/recordnew',
+                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr,
+                            dataType : 'json',
+                            type : 'POST',
+                            success : function(ress){
+                                if(ress.status == 1){
+                                    location.href = '__URL__/result';
+                                }else{
+                                    alert('数据通信失败！');
+                                }
+                            }
+                        });
+                    }else{
+                        alert('发布微博失败！');
+                    }
                 }
+
             });
         });
     </script>
