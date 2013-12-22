@@ -80,9 +80,12 @@ class IndexAction extends Action {
         //All Friends
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
 
-        //友情指数排行榜
+
+        /* --------------------- 友情指数排行榜 Start ---------------------- */
+
         $where_index = array();
         //$where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
+
         //最低三位
         $index_asc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score ASC') -> select();
         $index_asc = array_reverse($index_asc);
@@ -104,8 +107,10 @@ class IndexAction extends Action {
             usleep(200000);
         }
 
-        dump($index_asc);
-        dump($index_desc);
+        $this -> assign('index_asc', $index_asc);
+        $this -> assign('index_desc', $index_desc);
+
+        /* --------------------- 友情指数排行榜 End ---------------------- */
 
         $this -> display();
 
