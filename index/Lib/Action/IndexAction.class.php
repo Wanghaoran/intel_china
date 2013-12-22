@@ -144,6 +144,11 @@ class IndexAction extends Action {
 
     //更多好友页
     public function morefriends(){
+        include_once('./saetv2.ex.class.php');
+        $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
+        $uid_get = $c->get_uid();
+        $uid = $uid_get['uid'];
+
         //All Friends
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
         $User = M('User');
