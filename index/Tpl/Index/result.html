@@ -130,96 +130,18 @@
     	<div class="ftitle"><span><a href="#">更多好友</a></span>你的好友参与</div>
         <div class="fcon">
         	<ul>
+                <volist name="friend_join" id="f_j">
             	<li>
                 	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang1.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
+                    	<dt><a href="#"><img src="<-{f_j.avatar_large}->"/></a></dt>
+                        <dd class="d1"><a href="#"><-{f_j.type_name}-></a></dd>
                         <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
+                        <dd class="d3"><-{$i_a.score}-></dd>
                         <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
                     </dl>
                 </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang2.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang3.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang4.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang5.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang1.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang2.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang3.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang4.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
-                <li>
-                	<dl>
-                    	<dt><a href="#"><img src="upfile/touxiang5.jpg"/></a></dt>
-                        <dd class="d1"><a href="#">动感时尚志青春范er</a></dd>
-                        <dd class="d2">友情支持指数：</dd>
-                        <dd class="d3">50</dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
-                    </dl>
-                </li>
+                </volist>
+
             </ul><div class="clear"></div>
         </div>
     </div>

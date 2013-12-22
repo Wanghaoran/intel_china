@@ -116,7 +116,7 @@ class IndexAction extends Action {
         $where_join = array();
         $where_join['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
 
-        $friend_join = $User -> field('uid,score') -> where($where_join) -> limit(10) -> order('join_time DESC') -> select();
+        $friend_join = $User -> field('uid,score,type_name') -> where($where_join) -> limit(10) -> order('join_time DESC') -> select();
 
         //获取头像及昵称
         foreach($friend_join as $key => $value){
@@ -126,8 +126,7 @@ class IndexAction extends Action {
             usleep(200000);
         }
 
-        dump($friend_join);
-
+        $this -> assign('friend_join', $friend_join);
 
         /* --------------------- 好友参与 End ---------------------- */
 
