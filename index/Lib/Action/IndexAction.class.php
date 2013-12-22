@@ -37,7 +37,7 @@ class IndexAction extends Action {
         $User = M('User');
         if($a = $User -> find($_GET['viewer'])){
             dump($a);
-            dump($_GET['viewer']);
+            dump($_GET);
             echo $User -> getLastSql();
             //redirect(PHP_FILE . '/index/result');
         }
