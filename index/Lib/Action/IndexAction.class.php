@@ -84,7 +84,7 @@ class IndexAction extends Action {
         /* --------------------- 友情指数排行榜 Start ---------------------- */
 
         $where_index = array();
-        //$where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
+        $where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
 
         //最低三位
         $index_asc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score ASC') -> select();
