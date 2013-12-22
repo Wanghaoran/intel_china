@@ -74,7 +74,7 @@ class IndexAction extends Action {
 
         //活动信息
         $User = M('User');
-        $site_info = $User -> field('type_name,score') -> find($uid);
+        $site_info = $User -> field('type_name,score,idstr') -> find($uid);
         $this -> assign('site_info', $site_info);
 
         //All Friends
@@ -129,6 +129,14 @@ class IndexAction extends Action {
         $this -> assign('friend_join', $friend_join);
 
         /* --------------------- 好友参与 End ---------------------- */
+
+
+        /* --------------------- 最新评论 Start ---------------------- */
+
+        $commit = $c -> get_comments_by_sid($site_info['idstr'], 1, 3);
+        dump($commit);
+
+        /* --------------------- 最新评论 End ---------------------- */
 
         $this -> display();
 
