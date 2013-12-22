@@ -66,14 +66,12 @@ class IndexAction extends Action {
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c->get_uid();
-        dump($uid_get);
         $uid = $uid_get['uid'];
-        //get Friend Ids
-        $temp = $c-> bilateral_ids($uid);
-        dump($temp);
-        $User = M('User');
-        $result = $User -> find($uid);
-        dump($result);
+
+        $user_info = $c -> show_user_by_id($uid);
+        dump($user_info);
+        $this -> display();
+
 
     }
 
