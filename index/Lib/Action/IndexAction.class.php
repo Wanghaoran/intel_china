@@ -133,6 +133,18 @@ class IndexAction extends Action {
 
         /* --------------------- 最新评论 End ---------------------- */
 
+
+        /* --------------------- 柱状图 Start ---------------------- */
+        $Position = M('Position');
+        //点赞数量
+        $up_num = $Position -> where(array('uid' => $uid, 'type' => 1)) -> count();
+        //点踩数量
+        $up_down = $Position -> where(array('uid' => $uid, 'type' => 2)) -> count();
+
+        dump($up_num);
+        dump($up_down);
+        /* --------------------- 柱状图 End ---------------------- */
+
         $this -> display();
 
     }
