@@ -28,23 +28,15 @@ $(document).ready(function(){
 </script>
     <script>
         function submitcommit(idstr, text){
-            /*
             $.ajax({
-                'url' : '__URL__/recordnew',
-                data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr + '&text=' + text,
+                'url' : '__URL__/commits',
+                data : 'idstr='+ idstr + '&text=' + text,
                 dataType : 'json',
                 type : 'POST',
                 success : function(ress){
-                    if(ress.status == 1){
-                        location.href = '__URL__/result';
-                    }else{
-                        alert('数据通信失败！');
-                    }
+                    console.log(ress);
                 }
             });
-            */
-            console.log(idstr);
-            console.log(text);
         }
     </script>
 </head>
