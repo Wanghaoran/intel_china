@@ -26,6 +26,27 @@ $(document).ready(function(){
 	
 });
 </script>
+    <script>
+        function submitcommit(idstr, text){
+            /*
+            $.ajax({
+                'url' : '__URL__/recordnew',
+                data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr + '&text=' + text,
+                dataType : 'json',
+                type : 'POST',
+                success : function(ress){
+                    if(ress.status == 1){
+                        location.href = '__URL__/result';
+                    }else{
+                        alert('数据通信失败！');
+                    }
+                }
+            });
+            */
+            console.log(idstr);
+            console.log(text);
+        }
+    </script>
 </head>
 <body>
 <div class="contain">
@@ -53,9 +74,9 @@ $(document).ready(function(){
                     </div>
                     <div class="div_ts3">
                     	<img src="<-{$user_info.profile_image_url }->" />
-                        <textarea></textarea>
+                        <textarea id="<-{$r.idstr_text}->"></textarea>
                     </div>
-                    <div class="div_ts4"><a href="#" title="评论"></a></div>
+                    <div class="div_ts4"><a onclick="submitcommit('<-{$r.idstr}->', $('#<-{$r.idstr_text}->').val());" title="评论"></a></div>
                 </div>
                 <!--弹出层1 结束-->
             </li>
