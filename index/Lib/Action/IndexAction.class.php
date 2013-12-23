@@ -185,7 +185,7 @@ class IndexAction extends Action {
 
         //一天只能点评一次
         $where_limit = array();
-        $where_limit['addtime'] = array('EGT', time() - 86400);
+        $where_limit['addtime'] = array('ELT', time() - 86400);
         $where_limit['uid'] = $_POST['uid'];
         $where_limit['uid_by'] = $uid;
         if($Position -> where($where_limit) -> find()){
