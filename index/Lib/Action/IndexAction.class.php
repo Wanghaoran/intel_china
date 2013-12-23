@@ -185,12 +185,13 @@ class IndexAction extends Action {
 
         //一天只能点评一次
         $where_limit = array();
-        $where_limit['addtime'] = array('ELT', time() - 86400);
+        $where_limit['addtime'] = array('EGT', time() - 86400);
         $where_limit['uid'] = $_POST['uid'];
         $where_limit['uid_by'] = $uid;
-        if($Position -> where($where_limit) -> find()){
+        if($a = $Position -> where($where_limit) -> find()){
             $this -> error('一天只能给好友点评一次哦，试试为别人点评吧！');
         }
+        dump($a);
         echo $Position -> getLastSql();
 
         //记录点评
