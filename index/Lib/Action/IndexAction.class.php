@@ -174,4 +174,9 @@ class IndexAction extends Action {
         }
     }
 
+    //表态
+    public function toposition(){
+
+    }
+
 }
