@@ -141,7 +141,7 @@ class IndexAction extends Action {
         //点踩数量
         $up_down = $Position -> where(array('uid' => $uid, 'type' => 2)) -> count();
 
-        $up_p = $up_down / ($up_num + $up_down) * 100;
+        $up_p = $up_num / ($up_num + $up_down) * 100;
         $down_p = 100 - $up_p;
 
         $this -> assign('up_p', $up_p);
