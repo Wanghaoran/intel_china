@@ -48,9 +48,10 @@ function closeBg(index) {
                         var type = 1;
                         var type_name = '高端大气商务范';
                         var idstr = o.result.data.idstr;
+                        var text = o.result.data.content;
                         $.ajax({
                             'url' : '__URL__/recordnew',
-                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr,
+                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr + '&text=' + text,
                             dataType : 'json',
                             type : 'POST',
                             success : function(ress){

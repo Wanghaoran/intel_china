@@ -47,6 +47,15 @@ class IndexAction extends Action {
 
     //记录新加入人员信息
     public function recordnew(){
+
+        $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
+        $uid_get = $c->get_uid();
+        $uid = $uid_get['uid'];
+
+        //用户信息
+        $user_info = $c -> show_user_by_id($uid);
+        $this -> assign('user_info', $user_info);
+
         $User = M('User');
         $data = array();
         $data['uid'] = $_POST['uid'];
@@ -54,6 +63,13 @@ class IndexAction extends Action {
         $data['type'] = $_POST['type'];
         $data['type_name'] = $_POST['type_name'];
         $data['idstr'] = $_POST['idstr'];
+        $data['text'] = $_POST['text'];
+        $data['screen_name'] = $user_info['screen_name'];
+        $data['profile_image_url'] = $user_info['profile_image_url'];
+        $data['avatar_large'] = $user_info['avatar_large'];
+        $data['avatar_hd'] = $user_info['avatar_hd'];
+        $data['profile_url'] = $user_info['profile_url'];
+        $data['bi_followers_count'] = $user_info['bi_followers_count'];
         if($User -> add($data)){
             $this -> success('success');
         }else{
@@ -69,14 +85,12 @@ class IndexAction extends Action {
         $uid = $uid_get['uid'];
 
         //用户信息
-        $user_info = $c -> show_user_by_id($uid);
-        $this -> assign('user_info', $user_info);
-
-        dump($user_info);
+//        $user_info = $c -> show_user_by_id($uid);
+//        $this -> assign('user_info', $user_info);
 
         //活动信息
         $User = M('User');
-        $site_info = $User -> field('type_name,score,idstr') -> find($uid);
+        $site_info = $User -> field('type_name,score,idstr,avatar_hd,screen_name') -> find($uid);
         $this -> assign('site_info', $site_info);
 
         //All Friends
