@@ -94,7 +94,7 @@ class IndexAction extends Action {
         $site_info = $User -> field('type_name,score,idstr,avatar_hd,screen_name,avatar_large') -> find($uid);
         $this -> assign('site_info', $site_info);
 
-        //All Friends
+        //All Friends - API
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
 
 
@@ -150,25 +150,12 @@ class IndexAction extends Action {
 
         //All Friends
         $friends_list = R('Type/getfriends', array($uid), 'Widget');
+
         $User = M('User');
         $where = array();
         $where['uid'] = array('in', $friends_list['ids']);
-        $result = $User -> field('uid,score,idstr,type_name') -> where($where) -> order('join_time DESC') -> select();
+        $result = $User -> field('uid,score,idstr,type_name,screen_name,avatar_large,text') -> where($where) -> order('join_time DESC') -> select();
 
-        //获取头像及昵称
-        foreach($result as $key => $value){
-            $temp_user_info = $c -> show_user_by_id($value['uid']);
-            $result[$key]['screen_name'] = $temp_user_info['screen_name'];
-            $result[$key]['avatar_large'] = $temp_user_info['avatar_large'];
-            usleep(200000);
-        }
-
-        //获取微博信息
-        foreach($result as $key => $value){
-            $temp_weibo_info = $c -> show_status($value['idstr']);
-            $result[$key]['text'] = $temp_weibo_info['text'];
-            usleep(200000);
-        }
 
         $this -> assign('result', $result);
 
