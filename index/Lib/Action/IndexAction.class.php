@@ -144,9 +144,12 @@ class IndexAction extends Action {
         $up_p = $up_down / ($up_num + $up_down) * 100;
         $down_p = 100 - $up_p;
 
-        dump($up_p);
-        dump($down_p);
-        
+        $this -> assign('up_p', $up_p);
+        $this -> assign('down_p', $down_p);
+
+        $this -> assign('up_num', $up_num * 5);
+        $this -> assign('up_down', $up_down * 5);
+
         /* --------------------- 柱状图 End ---------------------- */
 
         $this -> display();
