@@ -157,12 +157,12 @@ class IndexAction extends Action {
 
         $up_list = $Position -> alias('p') -> field('u.profile_image_url') -> join('intel_user as u ON p.uid = u.uid') -> where(array('p.uid' => $uid, 'p.type' => 1)) -> limit(5) -> order('p.addtime DESC') -> group('p.uid_by') -> select();
 
-        dump($up_list);
+        $this -> assign('up_list', $up_list);
 
         $down_list = $Position -> alias('p') -> field('u.profile_image_url') -> join('intel_user as u ON p.uid = u.uid') -> where(array('p.uid' => $uid, 'p.type' => 2)) -> limit(5) -> order('p.addtime DESC') -> group('p.uid_by') -> select();
 
+        $this -> assign('down_list', $down_list);
 
-        dump($down_list);
 
         /* --------------------- 他们赞过/踩过 End ---------------------- */
 

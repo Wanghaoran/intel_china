@@ -56,19 +56,15 @@
             <div class="zcbox">
             	<li>
                 	<dt></dt>
-                    <dd><a href="#"><img src="upfile/s_img1.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img2.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img3.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img4.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img1.jpg" /></a></dd>
+                    <volist name="up_list" id="ul">
+                    <dd><a><img src="<-{$ul.profile_image_url}->" /></a></dd>
+                    </volist>
                 </li>
                 <li class="last">
                 	<dt></dt>
-                    <dd><a href="#"><img src="upfile/s_img1.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img2.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img3.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img4.jpg" /></a></dd>
-                    <dd><a href="#"><img src="upfile/s_img1.jpg" /></a></dd>
+                    <volist name="down_list" id="dl">
+                    <dd><a><img src="<-{$dl.profile_image_url}->" /></a></dd>
+                    </volist>
                 </li>
             </div>
         </div>
