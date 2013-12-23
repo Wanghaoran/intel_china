@@ -104,25 +104,11 @@ class IndexAction extends Action {
         //$where_index['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
 
         //最低三位
-        $index_asc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score ASC') -> select();
+        $index_asc = $User -> field('uid,score,screen_name,avatar_large') -> limit(3) -> where($where_index) -> order('score ASC') -> select();
         $index_asc = array_reverse($index_asc);
         //最高三位
-        $index_desc = $User -> field('uid,score') -> limit(3) -> where($where_index) -> order('score DESC') -> select();
+        $index_desc = $User -> field('uid,score,screen_name,avatar_large') -> limit(3) -> where($where_index) -> order('score DESC') -> select();
 
-        //获取头像及昵称
-        foreach($index_asc as $key => $value){
-            $temp_user_info = $c -> show_user_by_id($value['uid']);
-            $index_asc[$key]['screen_name'] = $temp_user_info['screen_name'];
-            $index_asc[$key]['avatar_large'] = $temp_user_info['avatar_large'];
-            usleep(200000);
-        }
-
-        foreach($index_desc as $key => $value){
-            $temp_user_info = $c -> show_user_by_id($value['uid']);
-            $index_desc[$key]['screen_name'] = $temp_user_info['screen_name'];
-            $index_desc[$key]['avatar_large'] = $temp_user_info['avatar_large'];
-            usleep(200000);
-        }
 
         $this -> assign('index_asc', $index_asc);
         $this -> assign('index_desc', $index_desc);
@@ -133,15 +119,7 @@ class IndexAction extends Action {
         $where_join = array();
         $where_join['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
 
-        $friend_join = $User -> field('uid,score,type_name') -> where($where_join) -> limit(10) -> order('join_time DESC') -> select();
-
-        //获取头像及昵称
-        foreach($friend_join as $key => $value){
-            $temp_user_info = $c -> show_user_by_id($value['uid']);
-            $friend_join[$key]['screen_name'] = $temp_user_info['screen_name'];
-            $friend_join[$key]['avatar_large'] = $temp_user_info['avatar_large'];
-            usleep(200000);
-        }
+        $friend_join = $User -> field('uid,score,type_name,screen_name,avatar_large') -> where($where_join) -> limit(5) -> order('join_time DESC') -> select();
 
         $this -> assign('friend_join', $friend_join);
 
