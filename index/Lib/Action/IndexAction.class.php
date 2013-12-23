@@ -152,6 +152,16 @@ class IndexAction extends Action {
 
         /* --------------------- 柱状图 End ---------------------- */
 
+
+        /* --------------------- 他们赞过/踩过 Start ---------------------- */
+
+        $up_list = $Position -> alias('p') -> field('u.profile_image_url') -> join('intel_user as u ON p.uid = u.uid') -> where(array('uid' => $uid, 'type' => 1)) -> limit(5) -> order('addtime DESC') -> group('u.uid') -> select();
+
+        dump($up_list);
+
+
+        /* --------------------- 他们赞过/踩过 End ---------------------- */
+
         $this -> display();
 
     }
