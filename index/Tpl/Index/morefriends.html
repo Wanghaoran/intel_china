@@ -34,7 +34,11 @@ $(document).ready(function(){
                 dataType : 'json',
                 type : 'POST',
                 success : function(ress){
-                    console.log(ress);
+                    if(ress.status == 1){
+                        alert('评论成功！');
+                    }else{
+                        alert('数据通信失败！');
+                    }
                 }
             });
         }

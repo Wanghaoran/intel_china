@@ -167,7 +167,11 @@ class IndexAction extends Action {
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $result = $c -> send_comment($_POST['idstr'], $_POST['text']);
-        dump($result);
+        if($result){
+            $this -> success('Success');
+        }else{
+            $this -> error('Error');
+        }
     }
 
 }
