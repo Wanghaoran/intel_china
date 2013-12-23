@@ -191,6 +191,7 @@ class IndexAction extends Action {
         if($Position -> where($where_limit) -> find()){
             $this -> error('一天只能给好友点评一次哦，试试为别人点评吧！');
         }
+        dump($Position -> getLastSql());
 
         //记录点评
         $data = array();

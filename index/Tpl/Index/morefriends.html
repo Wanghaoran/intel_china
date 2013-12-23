@@ -52,7 +52,8 @@ $(document).ready(function(){
                 type : 'POST',
                 success : function(ress){
                     if(ress.status == 1){
-                        console.log(ress);
+                        alert(ress.info);
+                        location.reload();
                     }else{
                         alert('数据通信失败！');
                     }
