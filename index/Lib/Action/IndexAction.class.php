@@ -176,6 +176,40 @@ class IndexAction extends Action {
 
     //表态
     public function toposition(){
+        include_once('./saetv2.ex.class.php');
+        $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
+        $uid_get = $c->get_uid();
+        $uid = $uid_get['uid'];
+
+        $Position = M('Position');
+
+        //一天只能点评一次
+        $where_limit = array();
+        $where_limit['addtime'] = array('EGT', time() - 86400);
+        $where_limit['uid'] = $_POST['uid'];
+        $where_limit['uid_by'] = $uid;
+        if($Position -> where($where_limit) -> find()){
+            $this -> error('一天只能给好友点评一次哦，试试为别人点评吧！');
+        }
+
+        //记录点评
+        $data = array();
+        $data['uid'] = $_POST['uid'];
+        $data['uid_by'] = $uid;
+        $data['type'] = $_POST['type'];
+        $data['addtime'] = time();
+        if($Position -> add($data)){
+            //增加或减少积分
+            $User = M('User');
+            if($data['type'] == 1){
+                $User -> where(array('uid' => $data['uid'])) -> setInc('score', 5);
+            }else{
+                $User -> where(array('uid' => $data['uid'])) -> setDec('score', 5);
+            }
+            $this -> success('点评成功，感谢参与！')
+        }else{
+            $this -> error('点评失败，数据通信失败！');
+        }
 
     }
 

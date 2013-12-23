@@ -45,8 +45,15 @@ $(document).ready(function(){
     </script>
     <script>
         function position(uid, type){
-            console.log(uid);
-            console.log(type);
+            $.ajax({
+                'url' : '__URL__/toposition',
+                data : 'uid='+ uid + '&type=' + type,
+                dataType : 'json',
+                type : 'POST',
+                success : function(ress){
+                    console.log(ress);
+                }
+            });
         }
     </script>
 
