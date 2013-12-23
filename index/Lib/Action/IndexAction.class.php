@@ -91,7 +91,7 @@ class IndexAction extends Action {
 
         //活动信息
         $User = M('User');
-        $site_info = $User -> field('type_name,score,idstr,avatar_hd,screen_name') -> find($uid);
+        $site_info = $User -> field('type_name,score,idstr,avatar_hd,screen_name,avatar_large') -> find($uid);
         $this -> assign('site_info', $site_info);
 
         //All Friends
