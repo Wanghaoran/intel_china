@@ -9,6 +9,24 @@
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/appClient.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/client.js" type="text/javascript"></script>
     <script type="text/javascript" src="__PUBLIC__/index/javascript/jquery.js"></script>
+    <script>
+        function position(uid, type){
+            $.ajax({
+                'url' : '__URL__/toposition',
+                data : 'uid='+ uid + '&type=' + type,
+                dataType : 'json',
+                type : 'POST',
+                success : function(ress){
+                    if(ress.status == 1){
+                        alert(ress.info);
+                        location.reload();
+                    }else{
+                        alert(ress.info);
+                    }
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="contain">
@@ -120,7 +138,7 @@
                         <dd class="d1"><a href="#"><-{$f_j.type_name}-></a></dd>
                         <dd class="d2">友情支持指数：</dd>
                         <dd class="d3"><-{$f_j.score}-></dd>
-                        <dd class="d4"><a href="#" class="icon_z"></a><a href="#" class="icon_c"></a></dd>
+                        <dd class="d4"><a class="icon_z"  onclick="position('<-{$f_j.uid}->', 1);"></a><a class="icon_c" onclick="position('<-{$f_j.uid}->', 2);"></a></dd>
                     </dl>
                 </li>
                 </volist>
