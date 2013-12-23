@@ -51,7 +51,11 @@ $(document).ready(function(){
                 dataType : 'json',
                 type : 'POST',
                 success : function(ress){
-                    console.log(ress);
+                    if(ress.status == 1){
+                        console.log(ress);
+                    }else{
+                        alert('数据通信失败！');
+                    }
                 }
             });
         }

@@ -206,7 +206,7 @@ class IndexAction extends Action {
             }else{
                 $User -> where(array('uid' => $data['uid'])) -> setDec('score', 5);
             }
-            $this -> success('点评成功，感谢参与！')
+            $this -> success('点评成功，感谢参与！');
         }else{
             $this -> error('点评失败，数据通信失败！');
         }
