@@ -81,9 +81,10 @@ function closeBg(index) {
                         var type = 2;
                         var type_name = '时尚动感志青春';
                         var idstr = o.result.data.idstr;
+                        var text = o.result.data.content;
                         $.ajax({
                             'url' : '__URL__/recordnew',
-                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr,
+                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr + '&text=' + text,
                             dataType : 'json',
                             type : 'POST',
                             success : function(ress){
@@ -114,9 +115,10 @@ function closeBg(index) {
                         var type = 3;
                         var type_name = '家庭娱乐亲分享';
                         var idstr = o.result.data.idstr;
+                        var text = o.result.data.content;
                         $.ajax({
                             'url' : '__URL__/recordnew',
-                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr,
+                            data : 'uid='+ uid + '&type=' + type + '&type_name=' + type_name + '&idstr=' + idstr + '&text=' + text,
                             dataType : 'json',
                             type : 'POST',
                             success : function(ress){

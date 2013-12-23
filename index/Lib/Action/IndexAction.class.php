@@ -48,6 +48,7 @@ class IndexAction extends Action {
     //记录新加入人员信息
     public function recordnew(){
 
+        include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c->get_uid();
         $uid = $uid_get['uid'];
