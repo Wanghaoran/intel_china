@@ -12,7 +12,7 @@
     <script type="text/javascript">
 
         //点击赞
-        function setZan(n){
+        function setZan(event, n){
             console.log(n);
             var e=window.event || event;
             if(e.stopPropagation){
@@ -24,33 +24,7 @@
             var con=document.getElementById("li_"+n);
             con.style.display="block";
 
-            $(".tishi").click(function(event){
-                var e=window.event || event;
-                if(e.stopPropagation){
-                    e.stopPropagation();
-                }else{
-                    e.cancelBubble = true;
-                }
-            });
-            document.onclick = function(){
-                con.style.display="none";
-            };
-        }
-
-        //点击踩
-        function setCai(n){
-            var e=window.event || event;
-            if(e.stopPropagation){
-                e.stopPropagation();
-            }else{
-                e.cancelBubble = true;
-            }
-
-
-            var con=document.getElementById("li_"+n);
-            con.style.display="block";
-
-            $(".tishi").click(function(event){
+            $(".tishi").click(function(event, e){
                 var e=window.event || event;
                 if(e.stopPropagation){
                     e.stopPropagation();
@@ -101,7 +75,7 @@
                 success : function(ress){
                     if(ress.status == 1){
                         alert(ress.info);
-                        setZan(uid);
+                        setZan(event, uid);
                         //location.reload();
                     }else{
                         alert(ress.info);
@@ -132,7 +106,7 @@
                 <div class="clear"></div>
                 <!--弹出层1 开始-->
                 <div class="tishi t<-{$mod+1}->" style="display:none"  id="li_<-{$r.uid}->">
-                	<div class="div_ts1"><a href="javascript:void(0);" class="close"></a></div>
+                    <div class="div_ts1"><a href="javascript:void(0);" onclick="setClose('<-{$r.uid}->');return false;" class="close"></a></div>
                     <div class="div_ts2">
                         <-{$r.text}->
                     </div>
