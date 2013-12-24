@@ -9,23 +9,70 @@
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/appClient.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/client.js" type="text/javascript"></script>
     <script type="text/javascript" src="__PUBLIC__/index/javascript/jquery.js"></script>
-<script type="text/javascript"> 
-$(document).ready(function(){
-	
-	$(".roll_con li").hover(function() {
-		$(this).find("div.tishi").css("display","block");
-		$(this).addClass("current");
-	},function(){
-		$(this).find("div.tishi").css("display","none");
-		$(this).removeClass("current");
-	});
-	
-	$(".close").click(function() {
-		$(".tishi").hide();
-	});
-	
-});
-</script>
+    <script type="text/javascript">
+
+        //点击赞
+        function setZan(n){
+            var e=window.event || event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else{
+                e.cancelBubble = true;
+            }
+
+            var con=document.getElementById("li_"+n);
+            con.style.display="block";
+
+            $(".tishi").click(function(event){
+                var e=window.event || event;
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+            });
+            document.onclick = function(){
+                con.style.display="none";
+            };
+        }
+
+        //点击踩
+        function setCai(n){
+            var e=window.event || event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else{
+                e.cancelBubble = true;
+            }
+
+
+            var con=document.getElementById("li_"+n);
+            con.style.display="block";
+
+            $(".tishi").click(function(event){
+                var e=window.event || event;
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+            });
+            document.onclick = function(){
+                con.style.display="none";
+            };
+        }
+
+        //关闭按钮
+        function setClose(n){
+
+            var con=document.getElementById("li_"+n);
+
+            con.style.display="none";
+
+        }
+
+    </script>
+
     <script>
         function submitcommit(idstr, text){
             $.ajax({
@@ -53,7 +100,8 @@ $(document).ready(function(){
                 success : function(ress){
                     if(ress.status == 1){
                         alert(ress.info);
-                        location.reload();
+                        setZan(uid);
+                        //location.reload();
                     }else{
                         alert(ress.info);
                     }
@@ -78,11 +126,13 @@ $(document).ready(function(){
                 	<h2><a href="#"><-{$r.type_name}-></a></h2>
                     <h2>友情支持指数：</h2>
                     <h3><-{$r.score}-></h3>
+                    <div class="abtn"><a class="icon_z" href="javascript:void(0);" onclick="setZan(1);return false;"></a><a class="icon_c" href="javascript:void(0);" onclick="setCai(1);return false;"></a></div>
+
                     <div class="abtn"><a class="icon_z" onclick="position('<-{$r.uid}->', 1);"></a><a class="icon_c" onclick="position('<-{$r.uid}->', 2);"></a></div>
                 </div>
                 <div class="clear"></div>
                 <!--弹出层1 开始-->
-                <div class="tishi t<-{$mod+1}->" style="display:none">
+                <div class="tishi t<-{$mod+1}->" style="display:none"  id="li_<-{$r.uid}->">
                 	<div class="div_ts1"><a href="javascript:void(0);" class="close"></a></div>
                     <div class="div_ts2">
                         <-{$r.text}->
