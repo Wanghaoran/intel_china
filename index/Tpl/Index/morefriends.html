@@ -57,6 +57,7 @@
                 success : function(ress){
                     if(ress.status == 1){
                         alert('评论成功！');
+                        location.reload();
                     }else{
                         alert('数据通信失败！');
                     }
@@ -75,7 +76,6 @@
                     if(ress.status == 1){
                         alert(ress.info);
                         setZan(event, uid);
-                        //location.reload();
                     }else{
                         alert(ress.info);
                     }
