@@ -66,7 +66,7 @@
         }
     </script>
     <script>
-        function position(uid, type){
+        function position(uid, type, event){
             $.ajax({
                 'url' : '__URL__/toposition',
                 data : 'uid='+ uid + '&type=' + type,
@@ -101,7 +101,7 @@
                 	<h2><a href="#"><-{$r.type_name}-></a></h2>
                     <h2>友情支持指数：</h2>
                     <h3><-{$r.score}-></h3>
-                    <div class="abtn"><a class="icon_z" onclick="position('<-{$r.uid}->', 1);"></a><a class="icon_c" onclick="position('<-{$r.uid}->', 2);"></a></div>
+                    <div class="abtn"><a class="icon_z" onclick="position('<-{$r.uid}->', 1, event);"></a><a class="icon_c" onclick="position('<-{$r.uid}->', 2);"></a></div>
                 </div>
                 <div class="clear"></div>
                 <!--弹出层1 开始-->
