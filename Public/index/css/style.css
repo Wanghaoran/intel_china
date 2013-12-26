@@ -36,15 +36,15 @@ a:active{noOutline:expression(this.onFocus=this.blur());}
 .menu ul li.one a:hover{ background:url(../images/menubg.jpg) -440px -62px no-repeat;}
 .menu ul li.two a:hover{ background:url(../images/menubg.jpg) -700px -62px no-repeat;}
 .con{ width:940px; height:761px; background:url(../images/conbg.jpg) no-repeat; position:relative;}
-a.btn_detail{ width:108px; height:42px; background:url(../images/btn_detail.jpg) top no-repeat; display:inline-block;}
-a.btn_detail:hover{background:url(../images/btn_detail.jpg) bottom no-repeat;}
+a.btn_detail{ width:108px; height:42px; background:url(../images/btn_detail.jpg) bottom no-repeat; display:inline-block;}
+a.btn_detail:hover{background:url(../images/btn_detail.jpg) top no-repeat;}
 .nav{ padding-top:670px;}
 .nav li{ float:left; width:313px; text-align:center;}
-.popdiv { background:#fff; text-align: center; width:900px; height:621px; z-index:99; position:absolute; top:120px; left:20px;} 
-a.icon_close{ float:right; margin:15px 15px 0 0; width:36px; height:36px; background:url(../images/icon_close.jpg) no-repeat;}
-a.btn_wyxz{ width:525px; height:58px; display:block; margin:40px 0 40px 235px; background:url(../images/btn_wyxz.jpg) no-repeat}
+.popdiv { background:#fff; text-align: center; width:900px; height:621px; z-index:99; position:absolute; top:100px; left:20px;} 
+a.icon_close{ float:right; margin:15px 15px 0 0; width:36px; height:36px; background:url(../images/icon_close.jpg) no-repeat; cursor:pointer;}
+a.btn_wyxz{ width:525px; height:58px; display:block; margin:40px auto; background:url(../images/btn_wyxz.jpg) no-repeat; cursor:pointer;}
 
-.jiangpin{ margin:10px auto; width:940px; height:341px;background:url(../images/jiangpin.jpg) no-repeat}
+.jiangpin{ margin:0 auto 10px; width:940px; height:340px;background:url(../images/jiangpin.jpg) no-repeat}
 .sina{ width:940px; margin:0 auto;}
 
 .discussbox{ width:890px; height:735px; padding:13px 0 0 50px; background:url(../images/discussbg.jpg) no-repeat;}
@@ -58,16 +58,16 @@ a.btn_wyxz{ width:525px; height:58px; display:block; margin:40px 0 40px 235px; b
 .tt_info h4{ font-size:45px; font-weight:800; color:#e8426d;}
 
 .bar{ width:570px; height:75px; background:#ed711f;}
-.bar_left{ float:left; width:68px; height:75px;  border-right:#f29c63 1px solid;}
+.bar_left{ float:left; width:68px; height:75px;  border-right:#fff 1px solid;}
 .bar_mid{ float:left; width:432px; height:75px;}
 .bar_mid span{ float:left; height:75px; line-height:75px;  display:inline;}
-.for_num{  background:#ed711f; color:#fff;font-size:18px; text-align:left; font-weight:400}
-.against_num{ background:#003a64; color:#fff; font-size:18px; text-align:right; font-weight:400}
-.bar_right{ float:left; width:68px; height:75px;  border-left:#4d7593 1px solid;}
+.for_num{  background:#ed711f; color:#fff;font-size:20px; text-align:left; font-weight:800}
+.against_num{ background:#858585; color:#fff; font-size:20px; text-align:right; font-weight:800}
+.bar_right{ float:left; width:68px; height:75px;  border-left:#fff 1px solid;}
 .bar_left a{width:68px; height:75px; display:inline-block;background:#ed711f url(../images/textbg.png) -19px -75px no-repeat;}
 .bar_left a:hover{background:#f08036 url(../images/textbg.png) -19px -75px no-repeat;}
-.bar_right a{width:68px; height:75px; display:inline-block;background:#003a64 url(../images/textbg.png) -19px -165px no-repeat;}
-.bar_right a:hover{background:#084672 url(../images/textbg.png) -19px -165px no-repeat;}
+.bar_right a{width:68px; height:75px; display:inline-block;background:#858585 url(../images/textbg.png) -19px -165px no-repeat;}
+.bar_right a:hover{background:#969595 url(../images/textbg.png) -19px -165px no-repeat;}
 
 .pinglun{ width:570px; height:260px; background:#fff; padding-top:10px;}
 .pl_title{ width:75px; height:20px; margin:0 0 5px 20px; background:url(../images/textbg.png) -35px -260px no-repeat;}
@@ -87,17 +87,20 @@ a.btn_wyxz{ width:525px; height:58px; display:block; margin:40px 0 40px 235px; b
 .zcbox li.last{border-right:none; margin-right:0; margin-left:10px; width:260px;}
 .zcbox li.last dt{background:url(../images/textbg.png) -35px -393px no-repeat;}
 
-.discusright{ float:left; width:280px; height:720px; margin-right:20px; background:#003f6f;}
-.distoptitle{ width:240px; height:36px; background:url(../images/textbg.png) -25px -10px no-repeat; margin:10px auto; border-bottom:#4b7799 1px solid;}
-.discon{ width:240px; margin:0 auto;}
-.discon li{ width:240px; height:58px; margin-top:10px;}
+.discusright{ float:left; width:280px; height:720px; margin-right:20px; background:#2eade2;}
+.distoptitle{ width:260px; height:36px; margin:10px auto 0; padding:5px 0;background:#29a5dc}
+.distoptitle span{width:240px; height:36px; background:url(../images/textbg.png) -25px -10px no-repeat; margin:0 auto; display:block; border-bottom:#68bfe5 1px solid;}
+.discon{ width:260px; margin:0 auto;background:#29a5dc;}
+.discon li{ width:240px; height:58px; margin:0 auto 5px; padding:5px; border-bottom:#68bfe5 1px solid;}
 .discon li div.divimg{ float:left; width:58px; height:58px; margin-right:10px;}
 .discon li div.divimg a img{ width:58px; height:58px; border:0;}
 .discon li div.divinfo{ float:left; width:170px; height:44px; padding:5px 0; line-height:22px; text-align:left;}
 .discon li div.divinfo h2{ font-size:16px; font-weight:400; color:#fff;}
 .discon li div.divinfo h2 a{color:#fff;}
 .discon li div.divinfo h2 span{ font-size:22px; color:#e8426d; font-weight:400; margin:3px 0 0 3px;}
-.discon li.circle{ width:15px; height:57px; margin:15px auto; background:url(../images/textbg.png) -35px -455px no-repeat; list-style:none;}
+.discon li.circle{  list-style:none; padding:0 5px 0 0;}
+.discon li.circle span{width:15px; height:57px; margin:5px auto 0; background:url(../images/textbg.png) -35px -455px no-repeat; display:block;}
+.discon li.last{ border:none;}
 
 .rollbox{ width:940px; height:613px; padding:30px 0 0 0; background:url(../images/discussbg.jpg) no-repeat;}
 .roll_title{ width:900px; margin:0 auto; height:36px; line-height:36px; color:#fff; font-size:18px; font-weight:400;}
@@ -105,6 +108,7 @@ a.btn_wyxz{ width:525px; height:58px; display:block; margin:40px 0 40px 235px; b
 .roll_title span a{ color:#fff;}
 .roll_con{ width:940px; height:550px; overflow:auto;overflow-x:hidden;}
 .roll_con li{ float:left; width:256px; height:153px; margin:0 0 15px 20px; padding:15px 0 0 23px; background:url(../images/boxbg.png) top no-repeat; position:relative;}
+.roll_con li a.all{ position:absolute; left:0; top:0; width:279px; height:168px; display:inline-block;}
 .roll_con li.current,.roll_con li:hover{background:url(../images/boxbg.png) bottom no-repeat;}
 .roll_con li div.tishi{display:none;width:460px; height:375px; background:url(../images/popbg.png) no-repeat; z-index:9999; padding-left:22px;}
 .roll_con li div.t1{position:absolute;top:-20px;right:-400px;}
@@ -127,8 +131,10 @@ a.btn_wyxz{ width:525px; height:58px; display:block; margin:40px 0 40px 235px; b
 .roll_con li div.divinfo h2 a{color:#fff;}
 .roll_con li div.divinfo h3{ font-size:28px; color:#fff200; font-weight:800;}
 .roll_con li div.divinfo .abtn{ margin:10px 0 0 0;}
-.roll_con li div.divinfo a.icon_z{ width:52px; height:44px; background:url(../images/icon_z.jpg) no-repeat; display:inline-block; margin-right:10px;}
-.roll_con li div.divinfo a.icon_c{ width:52px; height:44px; background:url(../images/icon_c.jpg) no-repeat; display:inline-block;}
+.roll_con li div.divinfo a.icon_z{ width:52px; height:44px; background:#ed711f url(../images/icon_z.png) center no-repeat; display:inline-block; margin-right:10px;}
+.roll_con li div.divinfo a.icon_z:hover{background:#f37f32 url(../images/icon_z.png) center no-repeat;}
+.roll_con li div.divinfo a.icon_c{ width:52px; height:44px; background:#858585 url(../images/icon_c.png) center no-repeat; display:inline-block;}
+.roll_con li div.divinfo a.icon_c:hover{background:#999 url(../images/icon_c.png) center no-repeat;}
 
 .friend{ width:880px; padding:0 30px;}
 .ftitle{ width:880px; margin:0 auto; height:36px; line-height:36px; color:#1f1f1f; font-size:18px; font-weight:400; border-bottom:#c8c8c8 1px solid;}
