@@ -54,8 +54,6 @@ class IndexAction extends Action {
         $uid_get = $c->get_uid();
         $uid = $uid_get['uid'];
 
-        dump($uid);
-
         //用户信息
         $user_info = $c -> show_user_by_id($uid);
         $this -> assign('user_info', $user_info);
@@ -87,6 +85,8 @@ class IndexAction extends Action {
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c->get_uid();
         $uid = $uid_get['uid'];
+
+        dump($uid);
 
         //用户信息
 //        $user_info = $c -> show_user_by_id($uid);
