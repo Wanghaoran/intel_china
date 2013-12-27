@@ -3,11 +3,16 @@ class IndexAction extends Action {
 
     //授权跳转页
     public function index(){
-        dump($_GET);
+        $uid = $_GET['viewer'];
+        $Log = M('Log');
+        $data = array();
+        $data['uid'] = $uid;
+        $data['join_time'] = time();
+        $Log -> add($data);
         include_once('./saetv2.ex.class.php');
         $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
         $code_url = $o -> getAuthorizeURL(C('WB_CALLBACK_URL'));
-        //redirect($code_url);
+        redirect($code_url);
     }
 
     //授权回调页
@@ -27,7 +32,7 @@ class IndexAction extends Action {
         if ($token) {
             $_SESSION['token'] = $token;
             setcookie('weibojs_'.$o -> client_id, http_build_query($token));
-            redirect(PHP_FILE . '/index/info' );
+            redirect(PHP_FILE . '/index/info/uid/' . $_GET['viewer'] );
         }else{
             die('授权失败');
         }
@@ -35,7 +40,7 @@ class IndexAction extends Action {
 
     //活动首页
     public function info(){
-        dump($_POST);
+        dump($_GET);
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c -> get_uid();
