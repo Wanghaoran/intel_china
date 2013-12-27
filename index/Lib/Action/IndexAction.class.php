@@ -45,7 +45,7 @@ class IndexAction extends Action {
         $uid_get = $c -> get_uid();
         $uid = $uid_get['uid'];
         if(!$uid){
-            die("亲爱的新浪审核管理员：<br/>您的账号还未添加到测试账号中，所以无法进行测试，您能否将您的测试用户uid写到下面的输入框并提交给我呢，我给你添加了测试账号，您就可以测试了。<br/><h3>或者您也可以使用 <span style='color:red;'>企业应用测试17(http://weibo.com/2791328227)</span> 这个账号进行测试呢？这个账号是添加到测试账号中去的</h3><br/>给您造成的不便，敬请谅解！<br/>错误信息：{$uid_get['error']}<br/>错误码：{$uid_get['error_code']}");
+            die("亲爱的新浪审核管理员：<br/>您的账号还未添加到测试账号中，所以无法进行测试。<br/><form action=""><h3>您可以使用 <span style='color:red;'>企业应用测试17(http://weibo.com/2791328227)</span> 这个账号进行测试,这个账号是添加到测试账号中去的</h3><br/>给您造成的不便，敬请谅解！<br/>错误信息：{$uid_get['error']}<br/>错误码：{$uid_get['error_code']}");
         }
 
         $User = M('User');
