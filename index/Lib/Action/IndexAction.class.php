@@ -86,6 +86,7 @@ class IndexAction extends Action {
         $uid_get = $c->get_uid();
         $uid = $uid_get['uid'];
 
+        dump($uid_get);
         dump($uid);
 
         //用户信息
