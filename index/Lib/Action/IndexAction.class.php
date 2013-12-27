@@ -38,6 +38,9 @@ class IndexAction extends Action {
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c -> get_uid();
         $uid = $uid_get['uid'];
+        if(!$uid){
+            die("您的账号不是测试账号，所以无法进行测试，请先联系管理员添加测试账号<br/>错误信息：{$uid_get['error']}<br/>错误码：{$uid_get['error_code']}");
+        }
 
         $User = M('User');
         if($a = $User -> find($uid)){
@@ -85,9 +88,6 @@ class IndexAction extends Action {
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c->get_uid();
         $uid = $uid_get['uid'];
-
-        dump($uid_get);
-        dump($uid);
 
         //用户信息
 //        $user_info = $c -> show_user_by_id($uid);
