@@ -34,6 +34,7 @@ class IndexAction extends Action {
 
     //活动首页
     public function info(){
+        dump($_GET);
         include_once('./saetv2.ex.class.php');
         $c = new SaeTClientV2(C('WB_AKEY'), C('WB_SKEY'), $_SESSION['token']['access_token']);
         $uid_get = $c -> get_uid();
