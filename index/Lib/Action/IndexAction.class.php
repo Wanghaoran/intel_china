@@ -3,10 +3,11 @@ class IndexAction extends Action {
 
     //授权跳转页
     public function index(){
+        dump($_GET);
         include_once('./saetv2.ex.class.php');
         $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
         $code_url = $o -> getAuthorizeURL(C('WB_CALLBACK_URL'));
-        redirect($code_url);
+        //redirect($code_url);
     }
 
     //授权回调页
