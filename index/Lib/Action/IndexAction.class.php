@@ -40,7 +40,7 @@ class IndexAction extends Action {
         if ($token) {
             $_SESSION['token'] = $token;
             setcookie('weibojs_'.$o -> client_id, http_build_query($token));
-            redirect(PHP_FILE . '/index/info/uid/' . $_GET['viewer'] );
+            redirect(PHP_FILE . '/index/info');
         }else{
             die('授权失败');
         }
