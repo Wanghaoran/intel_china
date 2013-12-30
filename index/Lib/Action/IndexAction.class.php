@@ -3,20 +3,6 @@ class IndexAction extends Action {
 
     //授权跳转页
     public function index(){
-        $uid = $_GET['viewer'];
-        $Log = M('Log');
-        $data = array();
-        $data['uid'] = $uid;
-        $data['join_time'] = time();
-        $Log -> add($data);
-
-        $Logs = M('Logs');
-        $datas = array();
-        $datas['uid'] = $_GET['viewer'];
-        $datas['in_time'] = time();
-        $Logs -> add($datas);
-
-
         include_once('./saetv2.ex.class.php');
         $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
         $code_url = $o -> getAuthorizeURL(C('WB_CALLBACK_URL'));
