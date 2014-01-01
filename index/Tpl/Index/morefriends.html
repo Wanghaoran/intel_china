@@ -95,7 +95,7 @@
 
             <volist name="result" id="r" mod="3">
         	<li>
-            	<div class="divimg"><a><img src="<-{$r.avatar_large}->" /></a></div>
+            	<div class="divimg"><a onclick="setZan(event, '<-{$r.uid}->');"><img src="<-{$r.avatar_large}->" /></a></div>
                 <div class="divinfo">
                 	<h2><a href="#"><-{$r.type_name}-></a></h2>
                     <h2>友情支持指数：</h2>
