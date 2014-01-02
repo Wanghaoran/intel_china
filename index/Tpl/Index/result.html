@@ -178,7 +178,11 @@
                     </dl>
                     <div class="clear"></div>
                     <!--弹出层1 开始-->
-                    <div class="tishi t1" style="display:none" id="li_<-{$f_j.uid}->">
+                    <elt name="i" value="3">
+                        <div class="tishi t1" style="display:none" id="li_<-{$f_j.uid}->">
+                    <else/>
+                        <div class="tishi t3" style="display:none" id="li_<-{$f_j.uid}->">
+                    </elt>
                         <div class="div_ts1"><a href="javascript:void(0);" onclick="setClose('<-{$f_j.uid}->');return false;" class="close"></a></div>
                         <div class="div_ts2">
                             <a href="#">#友情大挑战#</a> 属于我内心的词语是随性，看似漫不经心，其实随性的我只是按照自己的节奏去经营自己的人生。快来参加吧，探索"内个你"。
