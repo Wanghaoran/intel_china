@@ -185,11 +185,11 @@
                     </elt>
                         <div class="div_ts1"><a href="javascript:void(0);" onclick="setClose('<-{$f_j.uid}->');return false;" class="close"></a></div>
                         <div class="div_ts2">
-                            <a href="#">#友情大挑战#</a> 属于我内心的词语是随性，看似漫不经心，其实随性的我只是按照自己的节奏去经营自己的人生。快来参加吧，探索"内个你"。
+                            <-{$f_j.text}->
                         </div>
                         <div class="div_ts3">
-                            <img src="__UPLOAD__/s_img1.jpg" />
-                            <textarea>就你那样还高端大气上档次呢？请不要放弃治疗~高端大气上档次哥，你欠我的钱什么时候还？</textarea>
+                            <img src="<-{$user_info.avatar_large}->" />
+                            <textarea id="<-{$f_j.idstr}->_text"></textarea>
                         </div>
                         <div class="div_ts4"><a href="#" title="评论"></a></div>
                     </div>

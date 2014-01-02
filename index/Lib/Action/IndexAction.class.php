@@ -123,7 +123,7 @@ class IndexAction extends Action {
         $where_join = array();
         $where_join['uid'] = array('in', $friends_list['ids']); //只显示自己的好友
 
-        $friend_join = $User -> field('uid,score,type_name,screen_name,avatar_large') -> where($where_join) -> limit(5) -> order('join_time DESC') -> select();
+        $friend_join = $User -> field('uid,score,type_name,screen_name,avatar_large,text,idstr') -> where($where_join) -> limit(5) -> order('join_time DESC') -> select();
 
         $this -> assign('friend_join', $friend_join);
 
