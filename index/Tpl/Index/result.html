@@ -170,7 +170,7 @@
                 <volist name="friend_join" id="f_j">
             	<li>
                 	<dl>
-                    	<dt><a href="#"><img src="<-{$f_j.avatar_large}->"/></a></dt>
+                    	<dt><a onclick="setZan(event, '<-{f_j.uid}->');"><img src="<-{$f_j.avatar_large}->"/></a></dt>
                         <dd class="d1"><a href="#"><-{$f_j.type_name}-></a></dd>
                         <dd class="d2">友情支持指数：</dd>
                         <dd class="d3"><-{$f_j.score}-></dd>
