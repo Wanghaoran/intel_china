@@ -10,7 +10,7 @@
     <script src="http://js.t.sinajs.cn/t4/enterprise/js/public/appframe/client.js" type="text/javascript"></script>
     <script type="text/javascript" src="__PUBLIC__/index/javascript/jquery.js"></script>
     <script>
-        function position(uid, type){
+        function position(uid, type, event){
             $.ajax({
                 'url' : '__URL__/toposition',
                 data : 'uid='+ uid + '&type=' + type,
