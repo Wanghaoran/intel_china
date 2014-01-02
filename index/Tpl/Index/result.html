@@ -19,12 +19,48 @@
                 success : function(ress){
                     if(ress.status == 1){
                         alert(ress.info);
-                        location.reload();
+                        setZan(event, uid);
+//                        location.reload();
                     }else{
                         alert(ress.info);
                     }
                 }
             });
+        }
+    </script>
+    <script>
+        //点击赞
+        function setZan(event, n){
+            var e=window.event || event;
+            if(e.stopPropagation){
+                e.stopPropagation();
+            }else{
+                e.cancelBubble = true;
+            }
+
+            var con=document.getElementById("li_"+n);
+            con.style.display="block";
+
+            $(".tishi").click(function(event, e){
+                var e=window.event || event;
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }else{
+                    e.cancelBubble = true;
+                }
+            });
+            document.onclick = function(){
+                con.style.display="none";
+            };
+        }
+
+        //关闭按钮
+        function setClose(n){
+
+            var con=document.getElementById("li_"+n);
+
+            con.style.display="none";
+
         }
     </script>
 </head>
@@ -140,6 +176,21 @@
                         <dd class="d3"><-{$f_j.score}-></dd>
                         <dd class="d4"><a class="icon_z"  onclick="position('<-{$f_j.uid}->', 1);"></a><a class="icon_c" onclick="position('<-{$f_j.uid}->', 2);"></a></dd>
                     </dl>
+                    <div class="clear"></div>
+                    <!--弹出层1 开始-->
+                    <div class="tishi t1" style="display:none" id="li_<-{$f_j.uid}->">
+                        <div class="div_ts1"><a href="javascript:void(0);" onclick="setClose('<-{$f_j.uid}->');return false;" class="close"></a></div>
+                        <div class="div_ts2">
+                            <a href="#">#友情大挑战#</a> 属于我内心的词语是随性，看似漫不经心，其实随性的我只是按照自己的节奏去经营自己的人生。快来参加吧，探索"内个你"。
+                        </div>
+                        <div class="div_ts3">
+                            <img src="__UPLOAD__/s_img1.jpg" />
+                            <textarea>就你那样还高端大气上档次呢？请不要放弃治疗~高端大气上档次哥，你欠我的钱什么时候还？</textarea>
+                        </div>
+                        <div class="div_ts4"><a href="#" title="评论"></a></div>
+                    </div>
+                    <!--弹出层1 结束-->
+
                 </li>
                 </volist>
 

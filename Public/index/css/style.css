@@ -79,7 +79,17 @@ a.btn_wyxz:hover{ background:#f88030 url(../images/icon_wxz.png) center no-repea
 .divimg3 ul li.pc3 a{ width:210px; background-position:-610px top;}
 .divimg3 ul li.pc3 a:hover{ background-position:-610px bottom;}
 
-.jiangpin{ margin:0 auto 10px; width:940px; height:340px;background:url(../images/jiangpin.jpg) no-repeat}
+.jiangpin{ margin:0 auto 10px; width:940px; height:340px;background:url(../images/jiangpin.jpg) no-repeat; position:relative;}
+.jiangpin ul li{ position:absolute;}
+.jiangpin ul li a{ display:inline-block;}
+.jiangpin ul li.jp1{ top:70px; left:45px;}
+.jiangpin ul li.jp1 a{ width:180px; height:195px;}
+.jiangpin ul li.jp2{ top:115px; left:265px;}
+.jiangpin ul li.jp2 a{ width:190px; height:110px;}
+.jiangpin ul li.jp3{ top:115px; left:512px;}
+.jiangpin ul li.jp3 a{ width:190px; height:130px;}
+.jiangpin ul li.jp4{ top:115px; left:730px;}
+.jiangpin ul li.jp4 a{ width:190px; height:110px;}
 .sina{ width:940px; margin:0 auto;}
 
 .discussbox{ width:890px; height:735px; padding:13px 0 0 50px; background:url(../images/discussbg.jpg) no-repeat;}
@@ -176,7 +186,7 @@ a.btn_wyxz:hover{ background:#f88030 url(../images/icon_wxz.png) center no-repea
 .ftitle span{ float:right;}
 .ftitle span a{ color:#ff5310;}
 .fcon{ width:880px; margin-top:20px;}
-.fcon ul li{ float:left; width:160px; height:250px; padding-right:16px; text-align:left;}
+.fcon ul li{ float:left; width:160px; height:250px; padding-right:16px; text-align:left; position:relative;}
 .fcon ul li dl{}
 .fcon ul li dl dt a img{ width:63px; height:63px; border:0; margin:5px 0;}
 .fcon ul li dl dd.d1{ color:#000; font-size:16px; font-weight:800; height:30px; line-height:30px;}
@@ -185,5 +195,21 @@ a.btn_wyxz:hover{ background:#f88030 url(../images/icon_wxz.png) center no-repea
 .fcon ul li dl dd.d3{ color:#e8426d; font-size:30px; font-weight:800; height:40px; line-height:40px;}
 .fcon ul li dl dd.d4{ height:45px;}
 .fcon ul li dl dd.d4 a{ width:52px; height:44px; display:inline-block;}
-.fcon ul li dl dd.d4 a.icon_z{ background:url(../images/icon_z.jpg) no-repeat; margin-right:10px;}
-.fcon ul li dl dd.d4 a.icon_c{ background:url(../images/icon_c.jpg) no-repeat}
+.fcon ul li dl dd.d4 a.icon_z{ width:52px; height:44px; background:#ed711f url(../images/icon_z.png) center no-repeat; display:inline-block; margin-right:10px;}
+.fcon ul li dl dd.d4 a.icon_z:hover{background:#f37f32 url(../images/icon_z.png) center no-repeat;}
+.fcon ul li dl dd.d4 a.icon_c{ width:52px; height:44px; background:#858585 url(../images/icon_c.png) center no-repeat; display:inline-block;}
+.fcon ul li dl dd.d4 a.icon_c:hover{background:#999 url(../images/icon_c.png) center no-repeat;}
+
+.fcon ul li div.tishi{display:none;width:460px; height:375px; background:url(../images/popbg.png) no-repeat; z-index:9999; padding-left:22px;}
+.fcon ul li div.t1{position:absolute;top:-20px;right:-400px;}
+.fcon ul li div.t2{position:absolute;top:-20px;right:-350px;}
+.fcon ul li div.t3{position:absolute; background:url(../images/popbg2.png) no-repeat; top:-20px;left:-430px; width:482px; padding-left:0}
+.fcon ul li div.tishi .div_ts1{ width:15px; height:15px; padding:30px 0 0 400px;}
+.fcon ul li div.tishi .div_ts1 a{ width:15px; height:15px; display:block;}
+.fcon ul li div.tishi .div_ts2{ width:334px; height:80px; margin:5px 0 0 50px; padding:3px;}
+.fcon ul li div.tishi .div_ts2 a{ color:#008ed9;}
+.fcon ul li div.tishi .div_ts3{ width:340px; height:86px; margin:45px 0 0 50px;}
+.fcon ul li div.tishi .div_ts3 img{ float:left; width:50px; height:50px; margin:0 9px;}
+.fcon ul li div.tishi .div_ts3 textarea{ float:left; width:266px; height:80px; line-height:17px; padding:3px; border:none; background:none;}
+.fcon ul .div_ts4{ margin:10px 0 0 338px; width:55px; height:25px;}
+.fcon ul .div_ts4 a{ display:block; width:55px; height:25px;}
