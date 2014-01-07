@@ -39,7 +39,10 @@ class IndexAction extends Action {
         $uid_get = $c -> get_uid();
         $uid = $uid_get['uid'];
         if(!$uid){
-            die("亲爱的新浪审核管理员：<br/>您的账号还未添加到测试账号中，所以无法进行测试。<br/><h3>您可以使用 <span style='color:red;'>企业应用测试17(http://weibo.com/2791328227)</span> 这个账号进行测试,这个账号是添加到测试账号中去的</h3><br/>给您造成的不便，敬请谅解！<br/>错误信息：{$uid_get['error']}<br/>错误码：{$uid_get['error_code']}");
+            $o = new SaeTOAuthV2(C('WB_AKEY'), C('WB_SKEY'));
+            $code_url = $o -> getAuthorizeURL(C('WB_CALLBACK_URL'));
+            redirect($code_url);
+//            die("亲爱的新浪审核管理员：<br/>您的账号还未添加到测试账号中，所以无法进行测试。<br/><h3>您可以使用 <span style='color:red;'>企业应用测试17(http://weibo.com/2791328227)</span> 这个账号进行测试,这个账号是添加到测试账号中去的</h3><br/>给您造成的不便，敬请谅解！<br/>错误信息：{$uid_get['error']}<br/>错误码：{$uid_get['error_code']}");
         }
 
         $User = M('User');
